@@ -1,0 +1,5 @@
+@ProjectName.Api_HostAddress = http://localhost:5249
+
+GET {{ProjectName.Api_HostAddress}}/api/health/
+
+###

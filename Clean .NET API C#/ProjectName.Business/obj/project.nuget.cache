@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "DlhTmj7G78WZVaTXcGb2yptJNluOhWcAw8erDLTj/5SlqW3EcNJHgdfnc6HPRZyN6Hupv6DLIgVBowAUDzABVQ==",
+  "success": true,
+  "projectFilePath": "D:\\Modern-NET-Templates\\Clean .NET API C#\\ProjectName.Business\\ProjectName.Business.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hembh\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
+    "C:\\Users\\hembh\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\hembh\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\hembh\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\hembh\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
