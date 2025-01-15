@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>CleanNETAPI</id>
+    <version>1.0.0</version>
+    <authors>Hem Bhagat</authors>
+    <description>A solution template to quickly start building robust and scalable .NET API projects by following the principles of Clean Architecture.</description>
+    <tags>template, dotnet, web, csharp</tags>
+    <language>en-US</language>
+  </metadata>
+  <files>
+    <file src="**\*" target="content" />
+  </files>
+</package>
