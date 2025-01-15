@@ -1,5 +1,0 @@
-@SampleProj.Api_HostAddress = http://localhost:5249
-
-GET {{SampleProj.Api_HostAddress}}/api/health/
-
-###
