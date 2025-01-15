@@ -1,51 +1,44 @@
-# Modern .NET Templates
+# 🚀 Modern .NET Templates
 
-Welcome to the **Modern .NET Templates** repository! This is your one-stop destination for a collection of high-quality, ready-to-use templates for .NET projects. These templates are designed to help developers kickstart their projects with best practices, clean architecture principles, and pre-configured features.
+Welcome to the **Modern .NET Templates** repository! 🎉 Your one-stop destination for a collection of **high-quality**, **ready-to-use** templates for .NET projects. These templates are crafted to help you kickstart your projects with **best practices**, **Clean Architecture principles**, and **pre-configured features**.  
 
-Whether you are building APIs, web applications, or microservices, these templates are crafted to save you time and effort by providing a solid foundation.
+Whether you're building **APIs**, **web applications**, or **microservices**, these templates save you time and effort by providing a solid foundation.
 
-## Available Templates
+## 📦 Available Templates  
 
-### 1. Clean Architecture API Template
-- **Description**: A comprehensive template for building robust and scalable APIs using Clean Architecture principles.
-- **Features**:
-  - Fully configured project structure with Domain, Application, Infrastructure, and Presentation layers.
-  - Built-in EF Core integration with MySQL.
-  - Model validation using FluentValidation.
-  - Authentication with Identity Framework.
-  - Atomic database operations with a Transaction Filter.
-  - Automatic database migration on startup.
-  - Includes Automapper for object mapping.
-  - Example `Todo` entity to help you get started.
+### 1️⃣ **Clean .NET API Template**
+- **Description**: A comprehensive template for building **robust** and **scalable** APIs using Clean Architecture principles.  
+- **Features**:  
+  - 🔐 **Authentication with Identity Framework**: Secure your APIs with pre-configured Identity Framework and EF Core integration.  
+  - 📂 **Repository Pattern with EF Core**: Simplify data operations with a reusable BaseRepository for CRUD actions.  
+  - 🔄 **Transaction Filter**: Ensure atomic operations for POST, PUT, and DELETE APIs with built-in transaction management.  
+  - ✅ **Model Validation with FluentValidation**: Validate models effortlessly with pre-configured FluentValidation and custom validators.  
+  - 🛑 **Exception Middleware**: Centralize error handling to keep your codebase clean and exception-free.  
+  - 📊 **Automatic Database Migration**: Auto-apply pending migrations in development mode for seamless updates.  
+  - 🧩 **Automapper for Object Mapping**: Streamline object-to-object mapping to reduce redundancy in your code.  
+  - 📏 **Standard Coding Practices**: Adhere to best practices for clean, maintainable, and scalable code.  
 
-_For more details, visit the template's [README](./CleanArchitectureTemplate/README.md).
+For more details, visit the template's [README](https://github.com/hembhagat99/Modern-NET-Templates/blob/master/Clean%20.NET%20API/README.md).  
 
-## How to Use
+## 🛠️ How to Use  
+ 
+1. Download the [Modern .NET Templates](https://marketplace.visualstudio.com/items?itemName=hem-bhagat.ModernNETTemplates) extension from the Visual Studio Marketplace.  
+2. Search for the desired template in the new project dialog.  
+3. Follow the wizard to create your project.
 
-### Visual Studio
-1. Download the extension from the [Visual Studio Marketplace](https://marketplace.visualstudio.com).
-2. Open Visual Studio and navigate to **File > New > Project**.
-3. Search for the desired template and follow the wizard to configure your project.
+## 🤝 Contributing  
 
-### Using .NET CLI
-You can also use the templates directly from the .NET CLI:
+**I welcome contributions!** 💙 If you have ideas for new templates, improvements to existing ones, or found any issues, feel free to:  
+- 📝 Open an issue.  
+- 🔄 Submit a pull request.  
 
-```bash
-dotnet new [short-name] -n YourProjectName
-```
-
-Replace `[short-name]` with the CLI short name of the template you want to use.
-
-## Contributing
-Contributions are welcome! If you have ideas for new templates, improvements to existing ones, or have found any issues, feel free to:
-- Open an issue.
-- Submit a pull request.
-
-### Adding a New Template
-1. Create a folder for your template under the repository root.
-2. Include the template files and a `README.md` explaining its usage.
+### 💡 Adding a New Template  
+1. Create a folder for your template under the repository root.  
+2. Include the template files and a `README.md` explaining its usage.  
 3. Update this main `README.md` to list the new template.
 
-## License
-All templates in this repository are licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
+## 📜 License  
 
+All templates in this repository are licensed under the **MIT License**. See the [LICENSE](./LICENSE) file for details.  
+
+Happy Coding! 🚀💻✨  
