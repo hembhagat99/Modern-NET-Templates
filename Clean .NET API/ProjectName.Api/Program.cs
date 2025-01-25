@@ -9,6 +9,8 @@ using static ProjectName.Infrastructure.Extensions.ServiceCollectionExtensions;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.RegisterSerilog();
+
 builder.Services.RegisterStartupFilters();
 
 builder.Services.RegisterAuthorization();
