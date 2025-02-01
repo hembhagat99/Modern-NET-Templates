@@ -4,14 +4,14 @@ namespace ProjectName.Business.Services
 {
     public interface ITodoService
     {
-        Task<List<Todo>> GetAllAsync();
+        Task<List<Todo>> GetAllTodosForUserAsync(string userId);
 
-        Task<Todo> GetByIdAsync(Guid todoId);
+        Task<Todo> GetTodoForUserByIdAsync(Guid todoId, string userId);
 
-        Task<Todo> CreateAsync(Todo todo);
+        Task<Todo> CreateTodoForUserAsync(Todo todo, string userId);
 
-        Task<Todo> UpdateAsync(Todo todo);
+        Task<Todo> UpdateTodoForUserAsync(Todo todo, Guid todoId, string userId);
 
-        Task DeleteAsync(Guid todoId);
+        Task DeleteTodoForUserAsync(Guid todoId, string userId);
     }
 }

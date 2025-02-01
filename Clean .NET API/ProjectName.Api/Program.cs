@@ -3,12 +3,15 @@ using ProjectName.Api.Extensions;
 using ProjectName.Api.Middlewares;
 using ProjectName.Business.Extensions;
 using ProjectName.Infrastructure.Extensions;
+using Serilog;
 using static ProjectName.Business.Extensions.ServiceCollectionExtensions;
 using static ProjectName.Infrastructure.Extensions.ServiceCollectionExtensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.RegisterSerilog();
+
 builder.Services.RegisterStartupFilters();
 
 builder.Services.RegisterAuthorization();
@@ -45,6 +48,8 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseExceptionMiddleware();
+
+app.UseSerilogRequestLogging();
 
 app.MapGroup("api").MapIdentityApi<IdentityUser>();
 

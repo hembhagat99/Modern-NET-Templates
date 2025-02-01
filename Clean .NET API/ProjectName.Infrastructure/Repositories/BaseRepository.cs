@@ -52,27 +52,20 @@ namespace ProjectName.Infrastructure.Repositories
             return _mapper.Map<List<TEntity>>(dataModels);
         }
 
-        public virtual async Task<List<TEntity>> GetAllByQueryAsync(Expression<Func<TDataModel, bool>> predicate)
-        {
-            var dataModels = await Query().Where(predicate).ToListAsync();
-            return _mapper.Map<List<TEntity>>(dataModels);
-        }
-
         public virtual async Task<TEntity> GetByIdAsync(TKey id)
         {
-            var dataModel = await Query().FirstOrDefaultAsync(x => Object.Equals(x.Id, id));
-            return _mapper.Map<TEntity>(dataModel);
-        }
+            var dataModel = await Query().FirstOrDefaultAsync(x => Equals(x.Id, id));
+            if (dataModel == null)
+            {
+                throw new NotFoundException($"Entity {typeof(TEntity).Name} with id {id} not found");
+            }
 
-        public virtual async Task<TEntity> GetFirstByQueryAsync(Expression<Func<TDataModel, bool>> predicate)
-        {
-            var dataModel = await Query().FirstOrDefaultAsync(predicate);
             return _mapper.Map<TEntity>(dataModel);
         }
 
         public virtual async Task<TEntity> UpdateAsync(TEntity entity)
         {
-            var dataModel = await Query(trackChanges: true).FirstOrDefaultAsync(x => Object.Equals(x.Id, entity.Id));
+            var dataModel = await Query(trackChanges: true).FirstOrDefaultAsync(x => Equals(x.Id, entity.Id));
             if(dataModel == null)
             {
                 throw new NotFoundException($"Entity {typeof(TEntity).Name} with id {entity.Id} not found");
@@ -82,6 +75,18 @@ namespace ProjectName.Infrastructure.Repositories
             _dbSet.Update(dataModel);
 
             await _dbContext.SaveChangesAsync();
+            return _mapper.Map<TEntity>(dataModel);
+        }
+
+        protected async Task<List<TEntity>> GetAllByQueryAsync(Expression<Func<TDataModel, bool>> predicate)
+        {
+            var dataModels = await Query().Where(predicate).ToListAsync();
+            return _mapper.Map<List<TEntity>>(dataModels);
+        }
+
+        protected async Task<TEntity> GetFirstByQueryAsync(Expression<Func<TDataModel, bool>> predicate)
+        {
+            var dataModel = await Query().FirstOrDefaultAsync(predicate);
             return _mapper.Map<TEntity>(dataModel);
         }
 

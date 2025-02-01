@@ -6,7 +6,7 @@ using ProjectName.Infrastructure.Dbcontext;
 
 namespace ProjectName.Infrastructure.Repositories
 {
-    internal class TodoRepository : BaseRepository<Guid, Todo, TodoDataModel>, ITodoRepository
+    internal class TodoRepository : BaseUserLinkedRepository<Guid, Todo, TodoDataModel>, ITodoRepository
     {
         public TodoRepository(ProjectNameDbContext dbContext, IMapper mapper) : base(dbContext, mapper) { }
 

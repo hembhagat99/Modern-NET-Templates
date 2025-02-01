@@ -4,9 +4,19 @@ using ProjectName.Domain.Exceptions;
 
 namespace ProjectName.Api.Middlewares
 {
-    internal class ExceptionMiddleware(RequestDelegate next)
+    internal class ExceptionMiddleware
     {
-        private readonly RequestDelegate _next = next;
+        private readonly RequestDelegate _next;
+        private readonly ILogger<ExceptionMiddleware> _logger;
+
+        public ExceptionMiddleware(
+            RequestDelegate next,
+            ILogger<ExceptionMiddleware> logger)
+        {
+            _next = next;
+            _logger = logger;
+
+        }
 
         public async Task InvokeAsync(HttpContext httpContext)
         {
@@ -22,7 +32,8 @@ namespace ProjectName.Api.Middlewares
 
         private async Task HandleExceptionAsync(HttpContext httpContext, Exception exception)
         {
-            // TODO: Log Exception
+            _logger.LogError("Exception occurred. {Exception}", exception);
+
             if(exception is BusinessException businessException)
             {
                 await HandleBusinessExceptionAsync(httpContext, businessException);

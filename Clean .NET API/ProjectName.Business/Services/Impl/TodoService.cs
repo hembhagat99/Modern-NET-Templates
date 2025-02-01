@@ -3,31 +3,41 @@ using ProjectName.Domain.Repositories;
 
 namespace ProjectName.Business.Services.Impl
 {
-    internal class TodoService(ITodoRepository todoRepository) : ITodoService
+    internal class TodoService : ITodoService
     {
-        public async Task<List<Todo>> GetAllAsync()
+        private readonly ITodoRepository _todoRepository;
+
+        public TodoService(ITodoRepository todoRepository)
         {
-            return await todoRepository.GetAllAsync();
+            _todoRepository = todoRepository;
         }
 
-        public async Task<Todo> GetByIdAsync(Guid todoId)
+        public async Task<List<Todo>> GetAllTodosForUserAsync(string userId)
         {
-            return await todoRepository.GetByIdAsync(todoId);
+            return await _todoRepository.GetAllForUserAsync(userId);
         }
 
-        public async Task<Todo> CreateAsync(Todo todo)
+        public async Task<Todo> GetTodoForUserByIdAsync(Guid todoId, string userId)
         {
-            return await todoRepository.CreateAsync(todo);
+            return await _todoRepository.GetByIdForUserAsync(todoId, userId);
         }
 
-        public async Task<Todo> UpdateAsync(Todo todo)
+        public async Task<Todo> CreateTodoForUserAsync(Todo todo, string userId)
         {
-            return await todoRepository.UpdateAsync(todo);
+            todo.UserId = userId;
+            return await _todoRepository.CreateForUserAsync(todo);
         }
 
-        public async Task DeleteAsync(Guid todoId)
+        public async Task<Todo> UpdateTodoForUserAsync(Todo todo, Guid todoId, string userId)
         {
-            await todoRepository.DeleteAsync(todoId);
+            todo.Id = todoId;
+            todo.UserId = userId;
+            return await _todoRepository.UpdateForUserAsync(todo);
+        }
+
+        public async Task DeleteTodoForUserAsync(Guid todoId, string userId)
+        {
+            await _todoRepository.DeleteForUserAsync(todoId, userId);
         }
     }
 }

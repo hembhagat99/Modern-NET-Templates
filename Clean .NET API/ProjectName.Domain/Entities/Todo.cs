@@ -2,7 +2,7 @@
 
 namespace ProjectName.Domain.Entities
 {
-    public class Todo : BaseEntity<Guid>
+    public class Todo : BaseUserLinkedEntity<Guid>
     {
         public string Name { get; set; }
 
