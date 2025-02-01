@@ -2,7 +2,7 @@
 
 namespace ProjectName.Domain.Repositories
 {
-    public interface ITodoRepository : IRepository<Guid, Todo>
+    public interface ITodoRepository : IUserLinkedRepository<Guid, Todo>
     {
     }
 }

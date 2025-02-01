@@ -3,7 +3,7 @@ using AutoMapper;
 
 namespace ProjectName.Domain.Extensions
 {
-    public static class IMappingExpressionExtensions
+    public static class MappingExpressionExtensions
     {
         public static IMappingExpression<TSrc, TDest> ForProperty<TSrc, TDest, TSrcMember, TDestMember>(
             this IMappingExpression<TSrc, TDest> mappingExpression,

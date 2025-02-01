@@ -2,7 +2,7 @@
 
 namespace ProjectName.Api.DTOs.Todo
 {
-    public class TodoResponseDto : BaseResponseDto
+    public class TodoResponseDto : BaseUserLinkedResponseDto<Guid>
     {
         public string Name { get; set; }
 

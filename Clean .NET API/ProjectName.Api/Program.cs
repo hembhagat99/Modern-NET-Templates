@@ -3,6 +3,7 @@ using ProjectName.Api.Extensions;
 using ProjectName.Api.Middlewares;
 using ProjectName.Business.Extensions;
 using ProjectName.Infrastructure.Extensions;
+using Serilog;
 using static ProjectName.Business.Extensions.ServiceCollectionExtensions;
 using static ProjectName.Infrastructure.Extensions.ServiceCollectionExtensions;
 
@@ -47,6 +48,8 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseExceptionMiddleware();
+
+app.UseSerilogRequestLogging();
 
 app.MapGroup("api").MapIdentityApi<IdentityUser>();
 

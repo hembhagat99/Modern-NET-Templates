@@ -6,26 +6,48 @@ using ProjectName.Domain.Entities;
 
 namespace ProjectName.Api.Controllers
 {
-    public class TodosController(
-        ITodoService todoService,
-        IMapper mapper) : BaseApiController
+    public class TodosController : BaseApiController
     {
+        private readonly ITodoService _todoService;
+        private readonly IMapper _mapper;
+
+        public TodosController(ITodoService todoService, IMapper mapper)
+        {
+            _todoService = todoService;
+            _mapper = mapper;
+        }
+
         [HttpGet]
         [ProducesResponseType(typeof(List<TodoResponseDto>), StatusCodes.Status200OK)]
         public async Task<ActionResult<List<TodoResponseDto>>> GetAllAsync()
         {
-            var todos = await todoService.GetAllAsync();
-            return Ok(mapper.Map<List<TodoResponseDto>>(todos));
+            var userId = GetUserId();
+            var todos = await _todoService.GetAllTodosForUserAsync(userId);
+
+            return Ok(_mapper.Map<List<TodoResponseDto>>(todos));
+        }
+
+        [Route("{todoId}")]
+        [HttpGet]
+        [ProducesResponseType(typeof(TodoResponseDto), StatusCodes.Status200OK)]
+        public async Task<ActionResult<TodoResponseDto>> GetByIdAsync([FromRoute]Guid todoId)
+        {
+            var userId = GetUserId();
+            var todos = await _todoService.GetTodoForUserByIdAsync(todoId, userId);
+
+            return Ok(_mapper.Map<TodoResponseDto>(todos));
         }
 
         [HttpPost]
         [ProducesResponseType(typeof(TodoResponseDto), StatusCodes.Status201Created)]
         public async Task<ActionResult<TodoResponseDto>> CreateAsync([FromBody]TodoRequestDto todoRequestDto)
         {
-            var todo = mapper.Map<Todo>(todoRequestDto);
-            var createdTodo = await todoService.CreateAsync(todo);
+            var userId = GetUserId();
+            var todo = _mapper.Map<Todo>(todoRequestDto);
 
-            return Created($"{createdTodo.Id}", mapper.Map<TodoResponseDto>(createdTodo));
+            var createdTodo = await _todoService.CreateTodoForUserAsync(todo, userId);
+
+            return Created($"{createdTodo.Id}", _mapper.Map<TodoResponseDto>(createdTodo));
         }
 
         [Route("{todoId}")]
@@ -35,12 +57,12 @@ namespace ProjectName.Api.Controllers
             [FromRoute]Guid todoId,
             [FromBody]TodoRequestDto todoRequestDto)
         {
-            var todo = mapper.Map<Todo>(todoRequestDto);
-            todo.Id = todoId;
+            var userId = GetUserId();
+            var todo = _mapper.Map<Todo>(todoRequestDto);
 
-            var updatedTodo = await todoService.UpdateAsync(todo);
+            var updatedTodo = await _todoService.UpdateTodoForUserAsync(todo, todoId, userId);
 
-            return Ok(mapper.Map<TodoResponseDto>(updatedTodo));
+            return Ok(_mapper.Map<TodoResponseDto>(updatedTodo));
         }
 
         [Route("{todoId}")]
@@ -48,7 +70,9 @@ namespace ProjectName.Api.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult> DeleteAsync([FromRoute]Guid todoId)
         {
-            await todoService.DeleteAsync(todoId);
+            var userId = GetUserId();
+            await _todoService.DeleteTodoForUserAsync(todoId, userId);
+
             return Ok();
         }
     }
