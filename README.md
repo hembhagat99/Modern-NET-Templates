@@ -7,16 +7,16 @@ Whether you're building **APIs**, **web applications**, or **microservices**, th
 ## 📦 Available Templates  
 
 ### 1️⃣ **Clean .NET API Template**
-- **Description**: A comprehensive template for building **robust** and **scalable** APIs using Clean Architecture principles.  
-- **Features**:  
-  - 🔐 **Authentication with Identity Framework**: Secure your APIs with pre-configured Identity Framework and EF Core integration.  
-  - 📂 **Repository Pattern with EF Core**: Simplify data operations with a reusable BaseRepository for CRUD actions.  
-  - 🔄 **Transaction Filter**: Ensure atomic operations for POST, PUT, and DELETE APIs with built-in transaction management.  
-  - ✅ **Model Validation with FluentValidation**: Validate models effortlessly with pre-configured FluentValidation and custom validators.  
-  - 🛑 **Exception Middleware**: Centralize error handling to keep your codebase clean and exception-free.  
-  - 📊 **Automatic Database Migration**: Auto-apply pending migrations in development mode for seamless updates.  
-  - 🧩 **Automapper for Object Mapping**: Streamline object-to-object mapping to reduce redundancy in your code.  
-  - 📏 **Standard Coding Practices**: Adhere to best practices for clean, maintainable, and scalable code.  
+A comprehensive template for building **robust** and **scalable** APIs using Clean Architecture principles.    
+- 🔐 **Authentication with Identity Framework**: Secure your APIs with pre-configured Identity Framework and EF Core integration.  
+- 📂 **Repository Pattern with EF Core**: Simplify data operations with a reusable BaseRepository for CRUD actions.
+- 🔄 **Transaction Filter**: Ensure atomic operations for POST, PUT, and DELETE APIs with built-in transaction management.  
+- ✅ **Model Validation with FluentValidation**: Validate models effortlessly with pre-configured FluentValidation and custom validators.  
+- 🛑 **Exception Middleware**: Centralize error handling to keep your codebase clean and exception-free.  
+- 📊 **Automatic Database Migration**: Auto-apply pending migrations in development mode for seamless updates.  
+- 🧩 **Automapper for Object Mapping**: Streamline object-to-object mapping to reduce redundancy in your code.
+- 📝 **Pre-configured Serilog**: Log messages to file and console effortlessly with Serilog integration for easy debugging and monitoring.
+- 📏 **Standard Coding Practices**: Adhere to best practices for clean, maintainable, and scalable code.  
 
 For more details, visit the template's [README](https://github.com/hembhagat99/Modern-NET-Templates/blob/master/Clean%20.NET%20API/README.md).  
 
