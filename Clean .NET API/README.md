@@ -14,7 +14,7 @@ The template generates a complete API Project with adherence to Clean Architectu
 This template pre-configures the Identity Framework with EF Core and maps Identity API Endpoints, enabling you to secure your APIs effortlessly. Explore more about [Identity API Endpoints](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/identity-api-authorization?view=aspnetcore-8.0#the-mapidentityapituser-endpoints).
 
 ### 2️⃣ Repository Pattern with EF Core 
-Includes a **BaseRepository**, a generic repository containing methods for CRUD operations on data models using EF Core. Easily extend this abstract repository for your models and implement the **Repository Pattern** seamlessly.  
+Includes a **BaseRepository**, a generic repository containing methods for CRUD operations on data models using EF Core. Easily extend this abstract repository for your models and implement the **Repository Pattern** seamlessly. Also includes **BaseUserLinkedRepository** for seamless database operations with user-linked entities.
 
 > **💡 Note:** The template uses MySQL Database Provider for EF Core by default. You can switch to any EF Core-supported database provider.
 
@@ -37,7 +37,10 @@ Run your project in development mode, and any pending database migrations are ap
 ### 7️⃣ Automapper for Object Mapping
 The template integrates **Automapper** to simplify and streamline object mapping, reducing boilerplate code.  
 
-### 8️⃣ Standard Coding Practices
+### 8️⃣ Pre-configured Serilog for Logging
+Easily log messages to file and console with pre-configured Serilog, simplifying debugging and monitoring.
+
+### 9️⃣ Standard Coding Practices
 The codebase adheres to best practices:  
 - Readable naming conventions.  
 - Minimized code repetition.  

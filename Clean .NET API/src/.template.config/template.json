@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Hem Bhagat",
+    "classifications": ["Web","Solution"],
+    "name": "Clean .NET API",
+    "description": "A solution template to quickly start building robust and scalable .NET API projects by following the principles of Clean Architecture.",
+    "shortName": "clean-api-cs",
+    "defaultName": "NewProject",
+    "identity": "ModernNETTemplates.CleanNETAPI.C#",
+    "tags": {
+      "language": "C#",
+      "type": "solution",
+      "editorTreatAs":"solution"
+    },
+    "sourceName": "ProjectName",
+    "preferNameDirectory": true,
+    "guids": [
+      "48013851-B770-4FB7-8AA5-5636B6510B4F",
+      "04158F3C-1812-42A6-B161-1CAD6D951BDE",
+      "223E67B2-92E0-4EB2-A665-9C4E1D624DF5",
+      "625121ED-C2AC-41C3-BD5C-F7CFF63E5956"
+    ],
+    "primaryOutputs": [
+      {
+        "path": "ProjectName.sln"
+      }
+    ]
+  }

@@ -9,6 +9,6 @@
     <language>en-US</language>
   </metadata>
   <files>
-    <file src="**\*" target="content" />
+    <file src="src\**\*" target="content" />
   </files>
 </package>
