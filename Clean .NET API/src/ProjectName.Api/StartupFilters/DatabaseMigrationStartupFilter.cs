@@ -17,7 +17,7 @@ namespace ProjectName.Api.StartupFilters
                 {
                     using (var serviceScope = builder.CreateServiceScope())
                     {
-                        serviceScope.GetRequiredService<IMigrationRepository>().ApplyPendingMigrations();
+                        serviceScope!.GetRequiredService<IMigrationRepository>().ApplyPendingMigrations();
                     }
 
                     next(builder);

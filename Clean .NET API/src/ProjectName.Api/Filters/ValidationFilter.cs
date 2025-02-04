@@ -44,11 +44,8 @@ namespace ProjectName.Api.Filters
 
             var task = (Task<ValidationResult>)validateAsyncMethod.Invoke(
                 validator,
-                new object[]
-                {
-                    parameter,
-                    (CancellationToken)default 
-                });
+                [ parameter, (CancellationToken)default ])!;
+
             var validationResult = await task;
 
             return validationResult.Errors

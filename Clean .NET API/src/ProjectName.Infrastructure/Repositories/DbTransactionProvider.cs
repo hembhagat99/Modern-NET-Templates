@@ -17,14 +17,14 @@ namespace ProjectName.Infrastructure.Repositories
 
         public async Task CommitTransactionAsync()
         {
-            await transaction?.CommitAsync();
-            transaction?.Dispose();
+            await transaction!.CommitAsync();
+            transaction!.Dispose();
         }
 
         public async Task RollbackTransactionAsync()
         {
-            await transaction?.RollbackAsync();
-            transaction?.Dispose();
+            await transaction!.RollbackAsync();
+            transaction!.Dispose();
         }
     }
 }
