@@ -18,7 +18,9 @@ A comprehensive template for building **robust** and **scalable** APIs using Cle
 - 📝 **Pre-configured Serilog**: Log messages to file and console effortlessly with Serilog integration for easy debugging and monitoring.
 - 📏 **Standard Coding Practices**: Adhere to best practices for clean, maintainable, and scalable code.  
 
-For more details, visit the template's [README](https://github.com/hembhagat99/Modern-NET-Templates/blob/master/Clean%20.NET%20API/README.md).  
+For more details, visit the template's [README](https://github.com/hembhagat99/Modern-NET-Templates/blob/master/Clean%20.NET%20API/README.md).
+
+![Clean .NET API Demo](https://github.com/hembhagat99/Modern-NET-Templates/blob/release-update-1.0.4/Clean%20.NET%20API/demo.gif)
 
 ## 🛠️ How to Use  
  
